@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VSCode or IDE configs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
