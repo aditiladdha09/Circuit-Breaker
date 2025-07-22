@@ -1,0 +1,24 @@
+When you run `python3 circuit_breaker.py`, you should see output like this:
+--- Initial calls ---
+Success!
+Service failed!
+[TRANSITION] → OPEN
+CallNotPermittedException (Circuit is OPEN)
+
+--- Waiting to move to HALF_OPEN ---
+[TRANSITION] → HALF_OPEN
+Success!
+[TRANSITION] → CLOSED
+Success!
+
+--- After recovery ---
+Success!
+
+
+✅ **Explanation:**
+- First call succeeds (CLOSED state).
+- Two failures push failure rate > 50% → Circuit trips to OPEN.
+- Next call is blocked immediately (OPEN state).
+- After wait time → transitions to HALF_OPEN.
+- Two successful test calls → transitions back to CLOSED.
+- Calls succeed again.
