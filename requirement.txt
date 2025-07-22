@@ -1,0 +1,6 @@
+# No external dependencies are required.
+# This project uses only Python's standard library (time, collections, enum).
+
+# Recommended Python version
+python_version >= 3.8
+
